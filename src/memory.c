@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   memory.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/12 16:54:42 by lzima             #+#    #+#             */
+/*   Updated: 2022/05/12 16:54:44 by lzima            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
 void	free_alloc(t_env *e)
@@ -9,11 +21,12 @@ void	free_alloc(t_env *e)
 	exit(1);
 }
 
-t_env *mem_alloc()
+t_env	*mem_alloc(void)
 {
 	t_env	*tmp;
 
-	if((tmp = (t_env *)malloc(sizeof(t_env))) == NULL)
+	tmp = (t_env *) malloc(sizeof(t_env);
+	if (tmp) == NULL)
 		return (NULL);
 	tmp->is_pressed = false;
 	tmp->mlx = (t_mlx *)malloc(sizeof(t_mlx));
@@ -21,5 +34,5 @@ t_env *mem_alloc()
 	tmp->colors = (t_colors *)malloc(sizeof(t_colors));
 	if (!tmp->mlx || !tmp->complex || !tmp->colors)
 		return (NULL);
-	return(tmp);
+	return (tmp);
 }

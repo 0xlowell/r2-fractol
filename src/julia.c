@@ -1,18 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   julia.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/12 16:57:01 by lzima             #+#    #+#             */
+/*   Updated: 2022/05/12 16:57:03 by lzima            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/fractol.h"
 
-int julia_draw(int i, double zx, double zy, t_env *e)
+int	julia_draw(int i, double zx, double zy, t_env *e)
 {
 	double	new_x;
-	int j;
+	int		j;
 
-	j= 0;
+	j = 0;
 	while (i > j)
 	{
 		new_x = zx * zx - zy * zy;
 		zy = (zx + zx) * zy + e->complex->c_im;
 		zx = new_x + e->complex->c_re;
 		if ((zx * zx + zy * zy) > 4)
-			break;
+			break ;
 		j++;
 	}
 	return (rgb_to_int(j, e));
@@ -29,5 +41,4 @@ void	julia_set(t_env *e)
 	e->complex->c_re = -0.79;
 	e->complex->c_im = 0.11015;
 	draw_image(e);
-
 }

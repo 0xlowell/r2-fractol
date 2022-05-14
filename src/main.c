@@ -15,7 +15,7 @@
 int	main(int ac, char *av[])
 {
 	t_env	*e;
-	int 	check;
+	int		check;
 
 	check = 1;
 	error_argc(ac, check);

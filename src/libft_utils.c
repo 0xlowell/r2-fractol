@@ -1,5 +1,16 @@
-#include "../includes/fractol.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft_utils.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lzima <marvin@42lausanne.ch>               +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/05/12 16:57:01 by lzima             #+#    #+#             */
+/*   Updated: 2022/05/12 16:57:03 by lzima            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../includes/fractol.h"
 
 void	ft_putchar_fd(char c, int fd)
 {
@@ -8,27 +19,26 @@ void	ft_putchar_fd(char c, int fd)
 
 void	ft_putstr_fd(char *s, int fd)
 {
-    int	i;
+	int	i;
 
-    i = 0;
-    if (!s)
-        return ;
-    while (s[i])
-    {
-        ft_putchar_fd(s[i], fd);
-        i++;
-    }
+	i = 0;
+	if (!s)
+		return ;
+	while (s[i])
+	{
+		ft_putchar_fd(s[i], fd);
+		i++;
+	}
 }
 
-int ft_strcmp(const char *s1, const char *s2)
-
+int	ft_strcmp(const char *s1, const char *s2)
 {
-    while (*s1 != '\0' && *s2 != '\0' && (*s1 - *s2) == 0)
-    {
-        s1++;
-        s2++;
-    }
-    return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	while (*s1 != '\0' && *s2 != '\0' && (*s1 - *s2) == 0)
+	{
+		s1++;
+		s2++;
+	}
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)

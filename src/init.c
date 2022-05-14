@@ -48,12 +48,12 @@ int	init_window(t_env *env)
 	if (!env)
 		return (0);
 	env->mlx->mlx = mlx_init();
-	env->mlx->mlx_win = mlx_new_window(env->mlx->mlx, WIDTH, HEIGHT, "fract-ol");
+	env->mlx->mlx_win = mlx_new_window(env->mlx->mlx, WIDTH, HEIGHT, "fractol");
 	if (!env->mlx->mlx_win)
 		return (0);
 	env->mlx->img = mlx_new_image(env->mlx->mlx, HEIGHT, WIDTH);
 	env->mlx->addr = (int *)mlx_get_data_addr(env->mlx->img,
-		&env->mlx->bpp, &env->mlx->line_len, &env->mlx->endian);
+			&env->mlx->bpp, &env->mlx->line_len, &env->mlx->endian);
 	env->mlx->line_len /= 8;
 	return (1);
 }
