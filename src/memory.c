@@ -25,8 +25,8 @@ t_env	*mem_alloc(void)
 {
 	t_env	*tmp;
 
-	tmp = (t_env *) malloc(sizeof(t_env);
-	if (tmp) == NULL)
+	tmp = (t_env *) malloc(sizeof(t_env));
+	if (tmp == NULL)
 		return (NULL);
 	tmp->is_pressed = false;
 	tmp->mlx = (t_mlx *)malloc(sizeof(t_mlx));
